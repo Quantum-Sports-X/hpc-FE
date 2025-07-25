@@ -1,0 +1,50 @@
+/*-----------------
+    25. Gallery
+-----------------------*/
+
+.gallery-page {
+	.grid-item {
+		// margin-bottom: 2%;
+		overflow: hidden;
+		a {
+			img {
+				@include transition(all 0.5s ease-in-out 0s);
+				-webkit-transform: scale(1.0);
+				transform: scale(1.0);
+				border-radius: 5px;
+				&:hover {
+					-webkit-transform: scale(1.1);
+    				transform: scale(1.1);
+				}
+			}
+		}
+	}
+	.grid-item, .grid-sizer {
+	  	width: 32%;
+	  	@include respond-below(custom767) {
+	  		width: 48%;
+	  	}
+	}
+	.gutter-sizer { 
+		width: 2%; 
+	}
+}
+.content {
+	&.hexagon-background-gallery {
+		padding: 60px 0 50px;
+		&::before {
+			content: '';
+			position: fixed;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url(../../../../public/assets/img/seamless-1781533_1920.png);
+			background-position: center;
+			background-repeat: no-repeat;
+			background-size: cover; /* Adjust this as needed */
+			opacity: 0.045;
+			pointer-events: none; /* Prevent interaction with the pseudo-element */
+		}
+	}
+}
